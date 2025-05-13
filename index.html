@@ -5,27 +5,54 @@
   <title>عد تنازلي لميلادي</title>
   <style>
     body {
-      background-color: #fff8e1;
+      background-color: #f8bbd0; /* لون بينك فاتح */
       color: #333;
       font-family: 'Tahoma', sans-serif;
       text-align: center;
       padding-top: 100px;
+      background-image: url('https://www.transparenttextures.com/patterns/45-degree-fabric-light.png'); /* خلفية قماشية ناعمة */
+      background-size: cover;
     }
     h1 {
-      font-size: 30px;
-      color: #b28500;
+      font-size: 35px;
+      color: #d81b60;
+      text-shadow: 2px 2px 5px #ff4081; /* لمعة ناعمة حول النص */
     }
     #countdown {
       font-size: 40px;
       font-weight: bold;
       margin-top: 20px;
-      color: #8d6e00;
+      color: #880e4f;
+      text-shadow: 2px 2px 5px #ff4081;
+      animation: sparkle 1s infinite alternate; /* تأثير اللمعان */
+    }
+    .heart {
+      color: #f50057;
+      font-size: 50px;
+      animation: heartbeat 1.5s infinite alternate; /* تأثير نبض القلب */
+    }
+    @keyframes sparkle {
+      0% {
+        text-shadow: 2px 2px 5px #ff4081, 0 0 25px #ff4081, 0 0 50px #ff4081;
+      }
+      100% {
+        text-shadow: 2px 2px 5px #ff80ab, 0 0 25px #ff80ab, 0 0 50px #ff80ab;
+      }
+    }
+    @keyframes heartbeat {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.2);
+      }
     }
   </style>
 </head>
 <body>
   <h1>كم باقي على يوم ميلادي؟</h1>
   <div id="countdown"></div>
+  <div class="heart">❤️</div> <!-- قلب كيوت -->
 
   <script>
     const targetDate = new Date("2026-01-01T00:00:00").getTime();

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>عد تنازلي لميلادي</title>
+  <style>
+    body {
+      background-color: #fff8e1;
+      color: #333;
+      font-family: 'Tahoma', sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    h1 {
+      font-size: 30px;
+      color: #b28500;
+    }
+    #countdown {
+      font-size: 40px;
+      font-weight: bold;
+      margin-top: 20px;
+      color: #8d6e00;
+    }
+  </style>
+</head>
+<body>
+  <h1>كم باقي على يوم ميلادي؟</h1>
+  <div id="countdown"></div>
+
+  <script>
+    const targetDate = new Date("2026-01-01T00:00:00").getTime();
+
+    const updateCountdown = () => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("countdown").innerHTML =
+        `${days} يوم - ${hours} ساعة - ${minutes} دقيقة - ${seconds} ثانية`;
+
+      if (distance < 0) {
+        document.getElementById("countdown").innerHTML = "كل عام وأنا بخير!";
+      }
+    };
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+</body>
+</html>
